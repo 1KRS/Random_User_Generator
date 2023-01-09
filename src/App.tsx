@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Button from './Components/Button';
 
 function App() {
+
+  const [userData, setUserData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [activeUser, setActiveUser] = useState(false);
+  const [activeLink, setActiveLink] = useState(0);
+
+  const onClickHandler = () => {
+
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Ούλε τε και μάλα χαίρε</h1>
+      <h1>Random User Generator App</h1>
+      <Button isActive={activeUser} clicked={onClickHandler}/>
     </div>
   );
 }
