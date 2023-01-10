@@ -1,9 +1,13 @@
 import React from 'react'
 
-function Button() {
+interface Props {
+  handleClick: React.MouseEventHandler<HTMLButtonElement>;
+}
+
+const Button: React.FC <Props> = ({handleClick}) => {
   return (
     <div>
-      <button>Get User</button>
+      <button onClick = {handleClick}>Get User</button>
     </div>
   )
 }
