@@ -12,7 +12,8 @@ const App: React.FC = () => {
 
   // Not yet implemented
   // const [userData, setUserData] = useState([]);
-
+  // const [lang, setLang] = useState('ελληνικά');
+  
   const [user, setUser] = useState<User>({
     picture: '',
     name: '',
@@ -62,6 +63,9 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
+      <div>
+
+      </div>
       <h1>Random User Generator App</h1>
       <Button 
         isActive={activeUser}  
