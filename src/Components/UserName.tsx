@@ -4,9 +4,9 @@ interface IUserNameProps {
   user: User;
 }
 
-const UserName = ({user: { name }} : IUserNameProps) => {
+const UserName = ({user: { name, surname }} : IUserNameProps) => {
   return (
-    <div>{name}</div>
+    <div className='app__first_and_last'>{`${name} ${surname}`}</div>
   )
 }
 

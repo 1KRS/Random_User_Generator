@@ -1,8 +1,9 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
+  
+} */
 
 .App {
   display: flex;
@@ -12,6 +13,15 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
+  background-color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
   background-color: white;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
@@ -42,6 +52,27 @@ img {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.app__name, .app__maininfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  width: 100%;
+  font-weight: bold;
+  margin: 0 0 5px 0;
+}
+
+.app__name {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 15px 0 25px 0;
+}
+
+.app__age {
+  width: 100px;
+  margin: 15px 0 25px 0;
 }
 
 .app__icons {

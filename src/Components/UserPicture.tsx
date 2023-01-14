@@ -6,7 +6,6 @@ interface IUserPictureProps {
 
 const UserPicture = ({user: { picture }} : IUserPictureProps) => {
   return (
-    // <div>{picture}</div>
     <img src={picture} alt='#' />
   )
 }

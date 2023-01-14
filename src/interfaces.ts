@@ -1,6 +1,8 @@
 export interface User {
   picture: '',
   name: string,
-  age: number|'',
+  surname: string,
+  age: string|'',
   address: string
 }
+
