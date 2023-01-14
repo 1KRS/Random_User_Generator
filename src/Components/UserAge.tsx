@@ -6,7 +6,7 @@ interface IUserAgeProps {
 
 const UserAge = ({user: { age }}: IUserAgeProps) => {
   return (
-    <div className='app__maininfo'>Age: {age}</div>
+    <div className='app__maininfo'>{age}</div>
   )
 }
 

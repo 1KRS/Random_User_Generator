@@ -10,8 +10,9 @@ import UserAddress from './Components/UserAddress';
 
 const App: React.FC = () => {
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [userData, setUserData] = useState([]);
+  // Not yet implemented
+  // const [userData, setUserData] = useState([]);
+
   const [user, setUser] = useState<User>({
     picture: '',
     name: '',
@@ -21,21 +22,22 @@ const App: React.FC = () => {
   })
   const [loading, setLoading] = useState(false);
   const [activeUser, setActiveUser] = useState(false);
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [activeLink, setActiveLink] = useState(0);
+
+  // Not yet implemented
+  // const [activeLink, setActiveLink] = useState(0);
 
   const onClickHandler = () => {
     setLoading(true);
     axios.get('https://randomuser.me/api/')
     .then(res => {
       console.log('Data:', res.data.results[0])
-      setUserData(res.data.results[0]);
+      // setUserData(res.data.results[0]);
       setUser({
           picture: res.data.results[0].picture.large,
           name: res.data.results[0].name.first,
           surname: res.data.results[0].name.last,
-          age: res.data.results[0].dob.age,
-          address: res.data.results[0].location.street.name,
+          age: `Age: ${res.data.results[0].dob.age}`,
+          address: `Address: ${res.data.results[0].location.street.name}`,
       })
     })
     .catch(error => {
@@ -48,24 +50,15 @@ const App: React.FC = () => {
     })
   }
 
-  const icons = [
-    'fas fa-user fa-2x',
-    'fas fa-envelope fa-2x',
-    'fas fa-calendar-alt fa-2x',
-    'fas fa-map-marker fa-2x',
-    'fas fa-phone fa-2x',
-  ]
+  // Not yet implemented
 
-  // const PhraseGenerator = (user) => {
-  //   const phrases = [
-  //     `Hi my name is ${name}`
-  //   ]
-  //   return (
-  //     <div className='app__phrase'>
-  //       Αυτή είναι μία φράση.
-  //     </div>
-  //   )
-  // }
+  // const icons = [
+  //   'fas fa-user fa-2x',
+  //   'fas fa-envelope fa-2x',
+  //   'fas fa-calendar-alt fa-2x',
+  //   'fas fa-map-marker fa-2x',
+  //   'fas fa-phone fa-2x',
+  // ]
 
   return (
     <div className="App">
@@ -80,23 +73,25 @@ const App: React.FC = () => {
           <div>
             <UserPicture user={user} />
           </div>
-          {/* <PhraseGenerator user={user}/> */}
+          {/* 
+          // Not yet implemented
+          <PhraseGenerator user={user}/>
+          */}
           <div className='app__name'>
               <UserName user={user} />
           </div>
           <UserAge user={user} />
           <UserAddress user={user} />
-          <div className='app__maininfo'>
 
-              
-
-          </div>
-          {/* not yet implemented */}
-          {/* <div className='app__icons'>
+          {/*
+          // Not yet implemented
+          <div className='app__icons'>
             {icons.map((icon, index) => {
               return <i className={icon} key={index}></i>;
             })}
-          </div> */}
+          </div>
+          */}
+
         </main>
       }
     </div>

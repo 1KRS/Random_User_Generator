@@ -6,8 +6,7 @@ interface IUserAddressProps {
 
 const UserAddress = ({user: { address }}: IUserAddressProps) => {
   return (
-    
-    <div className='app__maininfo'>{`Address: ${address}`}</div>
+    <div className='app__maininfo'>{address}</div>
   )
 }
 
