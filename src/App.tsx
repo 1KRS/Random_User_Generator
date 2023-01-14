@@ -3,16 +3,17 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Button from './Components/Button';
 import { User } from './interfaces';
+import UserPicture from './Components/UserPicture';
 import UserName from './Components/UserName';
 import UserAge from './Components/UserAge';
 import UserAddress from './Components/UserAddress';
-
 
 const App: React.FC = () => {
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [userData, setUserData] = useState([]);
   const [user, setUser] = useState<User>({
+    picture: '',
     name: '',
     age: '',
     address: '',
@@ -26,18 +27,15 @@ const App: React.FC = () => {
     setLoading(true);
     axios.get('https://randomuser.me/api/')
     .then(res => {
+      console.log('Data:', res.data.results[0])
       setUserData(res.data.results[0]);
       setUser({
+          picture: res.data.results[0].picture.large,
           name: res.data.results[0].name.first,
           age: res.data.results[0].dob.age,
           address: res.data.results[0].location.street.name,
       })
-      // return userData;
     })
-    // .then(res => {
-    //   const newUser = userData[0];
-    //   console.log('newUser', newUser);
-    // })
     .catch(error => {
       console.log(error)
       setLoading(true);
@@ -57,17 +55,8 @@ const App: React.FC = () => {
       />
       {loading ? 
         <h3>Φορτώνει...</h3> : 
-        // ''
-        // <div className="app__user">
-        //   {userData.map((user: User, index) => {
-        //     return (
-        //       <Fragment key={user.cell}>
-        //         <img src={user.picture.large} alt="#"/>
-        //       </Fragment>
-        //     )
-        //   })}
-        // </div>
         <main>
+          <UserPicture user={user} />
           <UserName user={user} />
           <UserAge user={user} />
           <UserAddress user={user} />
